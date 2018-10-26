@@ -1,0 +1,21 @@
+{
+    "name": "apsparser",
+    "source-url": "https://github.com/CurtTilmes/apsparser.git",
+    "perl": "6.*",
+    "depends": [
+        "LibUUID", "YAML", "OpenAPI::Schema::Validate"
+    ],
+    "license": "NASA-1.3",
+    "test-depends": [ "Test::When", "Test::META" ],
+    "provides": {
+        "APS::InputFile":    "lib/APS/InputFile.pm6",
+        "APS::OutputFile":   "lib/APS/OutputFile.pm6",
+        "APS::Job":          "lib/APS/Job.pm6",
+        "APS::Software":     "lib/APS/Software.pm6",
+        "APS::Validate":     "lib/APS/Validate.pm6"
+  },
+  "version": "0.1",
+  "meta-version": "0",
+  "authors" : [ "Curt Tilmes <Curt.Tilmes@nasa.gov>" ],
+  "description": "Parse APS job file descriptions."
+}

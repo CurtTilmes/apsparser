@@ -1,0 +1,23 @@
+Project: testproject
+
+Archiveset: testarchiveset
+
+Image: tisaps/testimage:1.0
+
+Command: /opt/runapp/bin/entrypoint.sh
+
+Args: [ a, b, c ]
+
+Software:
+  - testproject/testpge/1.0
+  - name: testproject/testpge/1.1
+    path: /test/pge/testpge-1.1
+  - project: testproject
+    name: testpge/1.2
+    path: /mnt/pge
+
+Input:
+  - testfile1
+  - testproject/testfile2
+  - project: testproject
+    filename: testfile3
