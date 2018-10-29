@@ -32,6 +32,7 @@ class APS::Job
     {
         $!software = APS::SoftwareList.new(:$!project, list => @software);
         $!inputs = APS::InputFileList.new(:$!project, list => @input);
+        $!command //= '';
         $!command = $command if $command;
     }
 
@@ -45,7 +46,7 @@ class APS::Job
         qq:to/END/
         Project: $!project
 
-        Archiveset: $!archiveset
+        Archiveset: {$!archiveset // ''}
 
         Image: $!image
 

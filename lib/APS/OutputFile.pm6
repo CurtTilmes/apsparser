@@ -18,7 +18,7 @@ class APS::OutputFile
     has $.esdt;
 
     submethod BUILD(Str:D :$!project, IO::Path:D :$!file,
-                    Str :$!archiveset, Str :$!key,
+                    :$!archiveset, Str :$!key,
                     Str :$!datatime, Str :$!esdt)
     {
         $!filename = $!file.basename;
@@ -57,7 +57,7 @@ class APS::OutputFileList
 {
     has @.files;
 
-    submethod BUILD(Str:D :$project, Str :$archiveset, Str:D :$dir)
+    submethod BUILD(Str:D :$project, :$archiveset, Str:D :$dir)
     {
         my $files = do with $dir.IO.add('output').slurp
                     { yaml.load($_) } else { %() }

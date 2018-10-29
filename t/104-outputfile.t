@@ -3,7 +3,7 @@ use APS::OutputFile;
 
 my $TESTDIR = $*PROGRAM.parent;
 
-plan 3;
+plan 1;
 
 my $project = 'testproject';
 my $archiveset = 'testarchiveset';
@@ -26,18 +26,5 @@ is-deeply $outfiles.hashlist,
       :md5("4f079e14c93fc0eb2b2364530ead5feb"),
       :project("testproject")}),
     'Hash list';
-
-my $archive = $TESTDIR.add('archive');
-
-$archive.mkdir;
-
-$outfiles.archive(~$archive);
-
-ok $archive.add('testfile4').f, 'testfile4 archived';
-ok $archive.add('testfile5').f, 'testfile5 archived';
-
-.unlink for $archive.dir;
-
-$archive.rmdir;
 
 done-testing;
