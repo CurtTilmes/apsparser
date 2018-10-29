@@ -82,11 +82,6 @@ class APS::OutputFileList
         }
     }
 
-    method archive(Str:D $dest)
-    {
-        .file.copy($dest.IO.add(.file.basename)) for @!files
-    }
-
     method Str() { join('', @!files».Str) }
 
     method hashlist() { @!files».hash }
