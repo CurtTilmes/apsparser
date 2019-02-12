@@ -11,7 +11,9 @@ my $dir = $TESTDIR.add('output').Str;
 
 my $outfiles = APS::OutputFileList.new(:$project, :$archiveset, :$dir);
 
-is-deeply $outfiles.hashlist,
+my $hashlist = $outfiles.hashlist.sort: -> $entry { $entry<filename> };
+
+is-deeply $hashlist,
     ({:archiveset("testarchiveset"),
       :datatime("2018-10-01 01:45"),
       :esdt("testesdt"),
