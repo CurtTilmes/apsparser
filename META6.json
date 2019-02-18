@@ -3,7 +3,7 @@
     "source-url": "https://github.com/CurtTilmes/apsparser.git",
     "perl": "6.*",
     "depends": [
-        "LibUUID", "YAML", "OpenAPI::Schema::Validate"
+        "LibUUID", "YAML:auth<github:yaml>", "OpenAPI::Schema::Validate"
     ],
     "license": "NASA-1.3",
     "test-depends": [ "Test::When", "Test::META" ],
